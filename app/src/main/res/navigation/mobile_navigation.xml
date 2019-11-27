@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/fragmentNotices">
+    <fragment
+        android:id="@+id/fragmentNotices"
+        android:name="com.example.myapplication21.view.NoticesFragment"
+        android:label="Noticias"
+        tools:layout="@layout/fragment_notices" />
+    <fragment
+        android:id="@+id/fragmentPartidos"
+        android:name="com.example.myapplication21.view.PartidosFragment"
+        android:label="Partidos"
+        tools:layout="@layout/fragment_partidos" />
+    <fragment
+        android:id="@+id/fragmentSiguiendo"
+        android:name="com.example.myapplication21.view.SiguiendoFragment"
+        android:label="Siguiendo"
+        tools:layout="@layout/fragment_siguiendo" />
+    <fragment
+        android:id="@+id/fragmentAjustes"
+        android:name="com.example.myapplication21.view.AjustesFragment"
+        android:label="Ajustes"
+        tools:layout="@layout/fragment_ajustes" />
+    <fragment
+        android:id="@+id/noticiasSiguiendoFragment"
+        android:name="com.example.myapplication21.NoticeTabs.NoticiasSiguiendoFragment"
+        android:label="fragment_noticias_siguiendo"
+        tools:layout="@layout/fragment_noticias_siguiendo" />
+    <fragment
+        android:id="@+id/equipoFavoritoFragment"
+        android:name="com.example.myapplication21.NoticeTabs.EquipoFavoritoFragment"
+        android:label="fragment_equipo_favorito"
+        tools:layout="@layout/fragment_equipo_favorito" />
+    <fragment
+        android:id="@+id/videosFragment"
+        android:name="com.example.myapplication21.NoticeTabs.VideosFragment"
+        android:label="fragment_videos"
+        tools:layout="@layout/fragment_videos" />
+</navigation>

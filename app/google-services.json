@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "152902525559",
+    "firebase_url": "https://allfoootball.firebaseio.com",
+    "project_id": "allfoootball",
+    "storage_bucket": "allfoootball.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152902525559:android:f46e3c411b6a89070e5c72",
+        "android_client_info": {
+          "package_name": "com.example.myapplication21"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152902525559-ed0336cs4s26s6m7dtfn712fmojksc86.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication21",
+            "certificate_hash": "79c9a01df8049ba8c3f376dcdee612a0490301c8"
+          }
+        },
+        {
+          "client_id": "152902525559-sgq9hovrs7c1e5ukh5d26vnlm7m6nhgb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzccdE6KM2_Dngxzlx0h2GX_3Ijwz68iQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152902525559-sgq9hovrs7c1e5ukh5d26vnlm7m6nhgb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

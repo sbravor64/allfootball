@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragmentNotices"
+        android:icon="@drawable/ic_notice"
+        android:title="@string/noticias" />
+
+    <item
+        android:id="@+id/fragmentPartidos"
+        android:icon="@drawable/ic_partidos"
+        android:title="@string/partidos" />
+
+    <item
+        android:id="@+id/fragmentSiguiendo"
+        android:icon="@drawable/ic_siguiendo"
+        android:title="@string/siguiendo" />
+
+    <item
+        android:id="@+id/fragmentAjustes"
+        android:icon="@drawable/ic_ajustes"
+        android:title="@string/ajustes" />
+
+</menu>
