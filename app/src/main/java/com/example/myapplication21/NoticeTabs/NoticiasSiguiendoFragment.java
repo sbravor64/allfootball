@@ -13,12 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication21.R;
 import com.example.myapplication21.model.Noticias;
-import com.example.myapplication21.AllFootballViewModel;
+import com.example.myapplication21.viewModel.AllFootballViewModel;
 
 import java.util.List;
 

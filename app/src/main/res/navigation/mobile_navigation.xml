@@ -39,4 +39,14 @@
         android:name="com.example.myapplication21.NoticeTabs.VideosFragment"
         android:label="fragment_videos"
         tools:layout="@layout/fragment_videos" />
+    <fragment
+        android:id="@+id/accederFragment"
+        android:name="com.example.myapplication21.view.AccederFragment"
+        android:label="fragment_acceder"
+        tools:layout="@layout/fragment_acceder" />
+    <fragment
+        android:id="@+id/registrarFragment"
+        android:name="com.example.myapplication21.view.RegistrarFragment"
+        android:label="fragment_registrar"
+        tools:layout="@layout/fragment_registrar" />
 </navigation>
