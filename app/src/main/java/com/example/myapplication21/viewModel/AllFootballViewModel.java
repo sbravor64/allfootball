@@ -44,6 +44,8 @@ public class AllFootballViewModel extends AndroidViewModel {
         setNoticias();
     }
 
+    public String usuario;
+
     public void registrarUsuario(final String nombre, final String email, final String password, final String biografia) {
 
         AsyncTask.execute(new Runnable() {

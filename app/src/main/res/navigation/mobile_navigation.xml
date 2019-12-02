@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/fragmentNotices">
+    app:startDestination="@id/accederFragment">
     <fragment
         android:id="@+id/fragmentNotices"
         android:name="com.example.myapplication21.view.NoticesFragment"
@@ -42,11 +42,11 @@
     <fragment
         android:id="@+id/accederFragment"
         android:name="com.example.myapplication21.view.AccederFragment"
-        android:label="fragment_acceder"
+        android:label="Iniciar Sesión"
         tools:layout="@layout/fragment_acceder" />
     <fragment
         android:id="@+id/registrarFragment"
         android:name="com.example.myapplication21.view.RegistrarFragment"
-        android:label="fragment_registrar"
+        android:label="Creación de cuenta"
         tools:layout="@layout/fragment_registrar" />
 </navigation>

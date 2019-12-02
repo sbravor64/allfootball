@@ -59,7 +59,6 @@ public class RegistrarFragment extends Fragment {
         view.findViewById(R.id.button_registrar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String username = usernameEditText.getText().toString();
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();

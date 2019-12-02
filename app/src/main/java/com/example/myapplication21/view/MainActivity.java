@@ -1,13 +1,17 @@
 package com.example.myapplication21.view;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.myapplication21.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -21,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        final BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
@@ -31,6 +35,25 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+
+        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
+            @Override
+            public void onDestinationChanged(@NonNull NavController controller,
+                                             @NonNull NavDestination destination, @Nullable Bundle arguments) {
+                switch (destination.getId()){
+                    case R.id.fragmentNotices:
+                    case R.id.fragmentPartidos:
+                    case R.id.fragmentSiguiendo:
+                    case R.id.fragmentAjustes:
+                        navView.setVisibility(View.VISIBLE);
+                        break;
+                    default:
+                        navView.setVisibility(View.GONE);
+                        break;
+                }
+            }
+        });
     }
 
 

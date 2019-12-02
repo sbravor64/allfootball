@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ import com.example.myapplication21.viewModel.AllFootballViewModel;
 public class AccederFragment extends Fragment {
 
     AllFootballViewModel allFootballViewModel;
+
 
     NavController navController;
     EditText usernameEditText, passwordEditText;
@@ -73,6 +75,9 @@ public class AccederFragment extends Fragment {
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
                 allFootballViewModel.iniciarSesion(username, password);
+                allFootballViewModel.usuario = usernameEditText.getText().toString();
+                Log.i("user",allFootballViewModel.usuario);
+
             }
         });
 
