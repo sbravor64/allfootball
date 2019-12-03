@@ -46,6 +46,4 @@ public class AjustesFragment extends Fragment {
         username = allFootballViewModel.usuario;
         usernameTextView.setText(username);
     }
-
-
 }

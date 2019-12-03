@@ -1,52 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.RegistrarFragment">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="60sp"
-
+        android:layout_margin="30sp"
+        android:padding="20sp"
+        android:background="@drawable/marco_largo"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_registro_face_google"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="30sp"
+            android:text="Registrate con" />
+
+        <TextView
+            android:id="@+id/textView_registro_credenciales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="30sp"
+            android:text="O regístrate con credenciales" />
 
         <EditText
             android:id="@+id/editText_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/marco_horizontal"
             android:ems="10"
+            android:hint="Usuario"
             android:inputType="textPersonName"
-            android:hint="Username" />
+            android:paddingLeft="25sp"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/editText_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/marco_horizontal"
             android:ems="10"
-            android:hint="Email" />
+            android:hint="Email"
+            android:paddingLeft="25sp"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/editText_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/marco_horizontal"
             android:ems="10"
-            android:hint="Contraseña" />
+            android:hint="Contraseña"
+            android:paddingLeft="25sp"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/editText_biografia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lines="4"
+            android:background="@drawable/marco_horizontal"
             android:gravity="top"
-            android:hint="Bíografia" />
+            android:hint="Bíografia"
+            android:lines="4"
+            android:paddingLeft="25sp"
+            android:paddingTop="10sp"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/button_registrar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="REGISTRARSE" />
+            android:layout_marginTop="30sp"
+            android:paddingHorizontal="35sp"
+            android:background="#5E72E4"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:text="CREAR CUENTA" />
     </LinearLayout>
 
 </FrameLayout>

@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.AccederFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,29 +18,28 @@
         android:padding="60sp"
         android:orientation="vertical">
 
-
-<!--        <View-->
-<!--            android:id="@+id/rectangle_5"-->
-<!--            android:layout_width="276dp"-->
-<!--            android:layout_height="58dp"-->
-<!--            android:background="@drawable/Rectangle_sesion">-->
-<!--        </View>-->
-
         <EditText
             android:id="@+id/editText_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/marco_editado"
             android:ems="10"
+            android:hint="Usuario"
             android:inputType="textPersonName"
-            android:hint="Usuario" />
+            android:paddingLeft="25sp"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/editText_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/marco_editado"
             android:ems="10"
+            android:hint="Contraseña"
             android:inputType="textPassword"
-            android:hint="Contraseña" />
+            android:paddingLeft="25sp"
+            android:layout_marginTop="15sp"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/textView_irAlRegistro"
@@ -43,8 +49,24 @@
 
         <Button
             android:id="@+id/button_acceder"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ACCEDER" />
+            android:background="#5E72E4"
+            android:layout_gravity="center"
+            android:paddingHorizontal="35sp"
+            android:textColor="@android:color/white"
+            android:text="Iniciar sesión" />
+
     </LinearLayout>
-</FrameLayout>
+    <Button
+        android:id="@+id/button_crear_cuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF334B"
+        android:textColor="@android:color/white"
+        android:paddingHorizontal="35sp"
+        android:layout_marginBottom="32sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Crear cuenta nueva" />
+</RelativeLayout>

@@ -62,7 +62,7 @@ public class AccederFragment extends Fragment {
         accederButton = view.findViewById(R.id.button_acceder);
 
 
-        view.findViewById(R.id.textView_irAlRegistro).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.button_crear_cuenta).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.registrarFragment);
