@@ -8,6 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
@@ -29,10 +30,11 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
+
         appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.fragmentNotices , R.id.fragmentPartidos, R.id.fragmentSiguiendo, R.id.fragmentAjustes)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
@@ -47,9 +49,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.fragmentSiguiendo:
                     case R.id.fragmentAjustes:
                         navView.setVisibility(View.VISIBLE);
+                        getSupportActionBar().show();
                         break;
                     default:
                         navView.setVisibility(View.GONE);
+                        getSupportActionBar().hide();
                         break;
                 }
             }
