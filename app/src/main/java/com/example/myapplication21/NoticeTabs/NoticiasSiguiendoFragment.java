@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.myapplication21.R;
-import com.example.myapplication21.model.Noticias;
+import com.example.myapplication21.model.Noticia;
 import com.example.myapplication21.viewModel.AllFootballViewModel;
 
 import java.util.List;
@@ -52,9 +52,9 @@ public class NoticiasSiguiendoFragment extends Fragment {
         final NoticiasAdapter noticiasAdapter = new NoticiasAdapter();
         recyclerView.setAdapter(noticiasAdapter);
 
-        allFootballViewModel.noticiasList.observe(getViewLifecycleOwner(), new Observer<List<Noticias>>() {
+        allFootballViewModel.cargarNoticas().observe(getViewLifecycleOwner(), new Observer<List<Noticia>>() {
             @Override
-            public void onChanged(List<Noticias> noticias) {
+            public void onChanged(List<Noticia> noticias) {
                 noticiasAdapter.establecerListaNoticias(noticias);
             }
         });
@@ -62,7 +62,7 @@ public class NoticiasSiguiendoFragment extends Fragment {
     }
 
     class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.NoticiasViewHolder> {
-        List<Noticias> noticiasList;
+        List<Noticia> noticiasList;
 
         @NonNull
         @Override
@@ -73,7 +73,7 @@ public class NoticiasSiguiendoFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull NoticiasViewHolder holder, int position) {
 
-            Noticias noticias = noticiasList.get(position);
+            Noticia noticias = noticiasList.get(position);
             holder.nomCategory.setText(noticias.getNomCategoria());
             holder.title.setText(noticias.getTitle());
             holder.description.setText(noticias.getDescription());
@@ -84,8 +84,9 @@ public class NoticiasSiguiendoFragment extends Fragment {
             return noticiasList == null ? 0 : noticiasList.size();
         }
 
-        void establecerListaNoticias(List<Noticias> n){
+        void establecerListaNoticias(List<Noticia> n){
             noticiasList = n;
+            notifyDataSetChanged();
         }
 
         class NoticiasViewHolder extends RecyclerView.ViewHolder {

@@ -5,19 +5,19 @@ import android.os.AsyncTask;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.myapplication21.db.AppDao;
 import com.example.myapplication21.db.AppDatabase;
-import com.example.myapplication21.model.Noticias;
+import com.example.myapplication21.model.Noticia;
 import com.example.myapplication21.model.Usuario;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AllFootballViewModel extends AndroidViewModel {
 
-    public MutableLiveData<List<Noticias>> noticiasList = new MutableLiveData<>();
+    public MutableLiveData<List<Noticia>> noticiasList = new MutableLiveData<>();
 
     public enum ResultadoDelRegistro {
         CORRECTO,
@@ -41,7 +41,6 @@ public class AllFootballViewModel extends AndroidViewModel {
         super(application);
 
         appDao = AppDatabase.getInstance(application).appDao();
-        setNoticias();
     }
 
     public String usuario;
@@ -84,14 +83,8 @@ public class AllFootballViewModel extends AndroidViewModel {
         estadoDeLaAutenticacion.setValue(EstadoDeLaAutenticacion.NO_AUTENTICADO);
     }
 
-    void setNoticias(){
-        // 3 segundos
-        List<Noticias> list = new ArrayList<>();
-        list.add(new Noticias("Top New","TITULO 2", "Hola, muy buenas2", 1));
-        list.add(new Noticias( "Top New","TITULO 1", "Hola, muy buenas1", 10));
-        list.add(new Noticias("Top New","TITULO 3", "Hola, muy buenas3", 5));
-
-        noticiasList.setValue(list);
+    public LiveData<List<Noticia>> cargarNoticas(){
+     return appDao.cargarNoticias();
     }
 
 }

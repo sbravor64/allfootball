@@ -1,17 +1,23 @@
 package com.example.myapplication21.model;
 
-public class Noticias {
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
+public class Noticia {
+
+    @PrimaryKey(autoGenerate = true)
+    public int idNoticia;
+
     private String nomCategoria;
     private String title;
     private String description;
-    private int imageId;
 
-    public Noticias(String nomCategoria, String title, String description, int imageId) {
-
+    public Noticia(int idNoticia,String nomCategoria, String title, String description) {
+        this.idNoticia = idNoticia;
         this.nomCategoria = nomCategoria;
         this.title = title;
         this.description = description;
-        this.imageId = imageId;
     }
 
     public String getNomCategoria() {
@@ -38,11 +44,5 @@ public class Noticias {
         this.description = description;
     }
 
-    public int getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
-    }
 }
+
