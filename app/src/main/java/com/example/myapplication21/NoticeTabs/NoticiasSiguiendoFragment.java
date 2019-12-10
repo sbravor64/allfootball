@@ -76,7 +76,7 @@ public class NoticiasSiguiendoFragment extends Fragment {
             Noticia noticias = noticiasList.get(position);
             holder.nomCategory.setText(noticias.getNomCategoria());
             holder.title.setText(noticias.getTitle());
-            holder.description.setText(noticias.getDescription());
+//            holder.description.setText(noticias.getDescription());
         }
 
         @Override
@@ -97,7 +97,7 @@ public class NoticiasSiguiendoFragment extends Fragment {
                 super(itemView);
                 nomCategory = itemView.findViewById(R.id.textViewCategory);
                 title = itemView.findViewById(R.id.textViewTitle);
-                description = itemView.findViewById(R.id.textViewDescription);
+//                description = itemView.findViewById(R.id.textViewDescription);
             }
         }
     }
