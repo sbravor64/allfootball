@@ -17,7 +17,7 @@ import java.util.List;
 
 public class AllFootballViewModel extends AndroidViewModel {
 
-    public MutableLiveData<List<Noticia>> noticiasList = new MutableLiveData<>();
+//    public MutableLiveData<List<Noticia>> noticiasList = new MutableLiveData<>();
 
     public enum ResultadoDelRegistro {
         CORRECTO,

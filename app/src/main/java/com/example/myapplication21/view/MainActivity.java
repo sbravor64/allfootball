@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.myapplication21.R;
+import com.example.myapplication21.viewModel.AllFootballViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.fragmentPartidos:
                     case R.id.fragmentSiguiendo:
                     case R.id.fragmentAjustes:
+                    case R.id.ajustesPerfilFragment:
                         navView.setVisibility(View.VISIBLE);
                         getSupportActionBar().show();
                         break;

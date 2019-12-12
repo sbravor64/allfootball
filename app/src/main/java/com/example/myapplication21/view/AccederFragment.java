@@ -30,8 +30,6 @@ import com.example.myapplication21.viewModel.AllFootballViewModel;
 public class AccederFragment extends Fragment {
 
     AllFootballViewModel allFootballViewModel;
-
-
     NavController navController;
     EditText usernameEditText, passwordEditText;
     Button accederButton;
@@ -58,7 +56,6 @@ public class AccederFragment extends Fragment {
 
         usernameEditText = view.findViewById(R.id.editText_username);
         passwordEditText = view.findViewById(R.id.editText_password);
-
         accederButton = view.findViewById(R.id.button_acceder);
 
 
