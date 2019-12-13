@@ -31,7 +31,7 @@
             android:drawablePadding="8dp"
             android:textColor="@android:color/white"
             android:layout_gravity="center"
-            app:backgroundTint="#26174D"
+            app:backgroundTint="#3369FF"
             android:text="iniciar sesión"/>
 
         <TextView
@@ -47,11 +47,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/account"
             android:drawablePadding="8dp"
+
             android:textColor="@android:color/white"
             android:layout_gravity="center"
-            app:backgroundTint="#26174D"
+            app:backgroundTint="#FF334B"
             android:text="crear cuenta"/>
     </LinearLayout>
 
