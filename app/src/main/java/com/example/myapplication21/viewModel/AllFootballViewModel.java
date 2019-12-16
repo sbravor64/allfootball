@@ -11,13 +11,17 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.myapplication21.db.AppDao;
 import com.example.myapplication21.db.AppDatabase;
 import com.example.myapplication21.model.Noticia;
+import com.example.myapplication21.model.Partido;
 import com.example.myapplication21.model.Usuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AllFootballViewModel extends AndroidViewModel {
 
 //    public MutableLiveData<List<Noticia>> noticiasList = new MutableLiveData<>();
+    public MutableLiveData<List<Partido>> listaPartidos = new MutableLiveData<>();
+    public MutableLiveData<Partido> partidoSeleccionado = new MutableLiveData<>();
 
     public enum ResultadoDelRegistro {
         CORRECTO,
@@ -41,6 +45,7 @@ public class AllFootballViewModel extends AndroidViewModel {
         super(application);
 
         appDao = AppDatabase.getInstance(application).appDao();
+        rellenarListaElementos();
     }
 
     public String usuario;
@@ -85,6 +90,19 @@ public class AllFootballViewModel extends AndroidViewModel {
 
     public LiveData<List<Noticia>> cargarNoticas(){
      return appDao.cargarNoticias();
+    }
+
+    public void rellenarListaElementos(){
+        List<Partido> partidos = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            Partido partido = new Partido("equipo " + i, "equipo " + i+1, "10:00", "2-0", "laLiga", "10.10.19");
+            partidos.add(partido);
+        }
+        listaPartidos.setValue(partidos);
+    }
+
+    public void establecerPartidoSeleccionado(Partido partido){
+        partidoSeleccionado.setValue(partido);
     }
 
 }

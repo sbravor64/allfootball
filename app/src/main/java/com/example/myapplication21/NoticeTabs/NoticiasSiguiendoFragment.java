@@ -61,7 +61,7 @@ public class NoticiasSiguiendoFragment extends Fragment {
 
     }
 
-    class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.NoticiasViewHolder> {
+    public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.NoticiasViewHolder> {
         List<Noticia> noticiasList;
 
         @NonNull
@@ -89,7 +89,7 @@ public class NoticiasSiguiendoFragment extends Fragment {
             notifyDataSetChanged();
         }
 
-        class NoticiasViewHolder extends RecyclerView.ViewHolder {
+        public class NoticiasViewHolder extends RecyclerView.ViewHolder {
 
             TextView nomCategory, title, description;
 
