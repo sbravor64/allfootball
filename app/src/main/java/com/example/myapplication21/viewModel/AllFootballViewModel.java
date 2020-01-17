@@ -10,6 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.myapplication21.db.AppDao;
 import com.example.myapplication21.db.AppDatabase;
+import com.example.myapplication21.model.Equipo;
 import com.example.myapplication21.model.Noticia;
 import com.example.myapplication21.model.Partido;
 import com.example.myapplication21.model.Usuario;
@@ -90,6 +91,10 @@ public class AllFootballViewModel extends AndroidViewModel {
 
     public LiveData<List<Noticia>> cargarNoticas(){
      return appDao.cargarNoticias();
+    }
+
+    public LiveData<List<Equipo>> cargarEquipos(){
+        return appDao.cargarEquipo();
     }
 
     public void rellenarListaElementos(){

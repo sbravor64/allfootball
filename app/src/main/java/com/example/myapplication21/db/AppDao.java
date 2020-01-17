@@ -5,6 +5,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import com.example.myapplication21.model.Equipo;
 import com.example.myapplication21.model.Noticia;
 import com.example.myapplication21.model.Usuario;
 
@@ -31,6 +32,12 @@ public abstract class AppDao {
 
     @Insert
     public abstract void insertarNoticia(Noticia noticia);
+
+    @Query("SELECT * FROM Equipo")
+    public abstract LiveData<List<Equipo>> cargarEquipo();
+
+    @Insert
+    public abstract void insertarEquipo(Equipo equipo);
 
 
 }

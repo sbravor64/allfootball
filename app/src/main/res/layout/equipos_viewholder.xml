@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="horizontal" android:layout_width="wrap_content"
     android:layout_margin="10dp"
-    android:layout_height="match_parent">
-
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageViewCompeticion"
+        android:id="@+id/imageViewEquipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
         app:srcCompat="@drawable/googleg_standard_color_18" />
 
     <TextView
-        android:id="@+id/textViewNombreCompeticion"
+        android:id="@+id/textViewNombreEquipo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="competicion" />
+        android:text="Equipo" />
 </LinearLayout>

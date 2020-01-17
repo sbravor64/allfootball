@@ -13,6 +13,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <SearchView
+            android:id="@+id/searchview_termino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <TextView
             android:id="@+id/textViewEquipoFavorito"
             android:layout_width="match_parent"
@@ -76,8 +81,17 @@
 
         </LinearLayout>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/equiposList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:spanCount="1" />
+
         <TextView
             android:id="@+id/textViewCompeticiones"
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

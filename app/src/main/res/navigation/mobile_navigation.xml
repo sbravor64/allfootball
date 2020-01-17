@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/fragmentNotices">
+    app:startDestination="@id/accederFragment">
     <fragment
         android:id="@+id/fragmentNotices"
         android:name="com.example.myapplication21.view.NoticesFragment"
