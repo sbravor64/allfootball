@@ -4,68 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
-    android:padding="60sp"
     tools:context=".view.AccederFragment">
 
-
-    <EditText
-        android:id="@+id/editText_username"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/marco"
-        android:hint="Usuario"
-        android:inputType="textPersonName"
-        android:paddingLeft="25dp"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/fondo"/>
 
-    <EditText
-        android:id="@+id/editText_password"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/marco"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:paddingLeft="25sp"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_acceder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.733"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="match_parent"
+        android:paddingHorizontal="250dp">
 
-    <Button
-        android:id="@+id/button_acceder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/marco_button_blue"
-        android:paddingHorizontal="60sp"
-        android:text="Iniciar sesión"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/button_crear_cuenta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:strokeWidth="2dp" />
+        <EditText
+            android:id="@+id/editText_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/marco_horizontal"
+            android:hint="Usuario"
+            android:inputType="textPersonName"
+            android:paddingLeft="25dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/editText_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.425"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/button_crear_cuenta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/marco_button_red"
-        android:text="Crear cuenta nueva"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/editText_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/marco_horizontal"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:paddingLeft="25sp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/button_acceder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.733"
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <Button
+            android:id="@+id/button_acceder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/marco_button_blue"
+            android:paddingHorizontal="60sp"
+            android:text="Iniciar sesión"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button_crear_cuenta"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeWidth="2dp" />
+
+        <TextView
+            android:id="@+id/textView_invitado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="44dp"
+            android:text="Acceder como invitado"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_crear_cuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/marco_button_red"
+            android:text="Crear cuenta nueva"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/textView_invitado"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

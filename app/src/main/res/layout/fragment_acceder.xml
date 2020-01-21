@@ -42,7 +42,7 @@
 
     <Button
         android:id="@+id/button_acceder"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="160dp"
@@ -56,12 +56,24 @@
 
     <Button
         android:id="@+id/button_crear_cuenta"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="64dp"
         android:background="@drawable/marco_button_red"
         android:paddingHorizontal="60dp"
-        android:text="Crear cuenta nueva"
+        android:text="Crear cuenta"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_invitado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="232dp"
+        android:text="Acceder como invitado"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

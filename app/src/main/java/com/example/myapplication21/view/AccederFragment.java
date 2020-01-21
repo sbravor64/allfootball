@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication21.R;
@@ -58,7 +59,6 @@ public class AccederFragment extends Fragment {
         passwordEditText = view.findViewById(R.id.editText_password);
         accederButton = view.findViewById(R.id.button_acceder);
 
-
         view.findViewById(R.id.button_crear_cuenta).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +75,13 @@ public class AccederFragment extends Fragment {
                 allFootballViewModel.usuario = usernameEditText.getText().toString();
                 Log.i("user",allFootballViewModel.usuario);
 
+            }
+        });
+
+        view.findViewById(R.id.textView_invitado).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate((R.id.fragmentNotices));
             }
         });
 
