@@ -1,7 +1,4 @@
 package com.example.myapplication21.view;
-
-
-import android.media.audiofx.DynamicsProcessing;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,14 +9,16 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.TextView;
 
-import com.example.myapplication21.NoticeTabs.NoticiasSiguiendoFragment;
 import com.example.myapplication21.R;
 import com.example.myapplication21.model.Equipo;
-import com.example.myapplication21.model.Noticia;
 import com.example.myapplication21.viewModel.AllFootballViewModel;
 
 import java.util.List;
@@ -31,7 +30,6 @@ import java.util.List;
 public class SiguiendoFragment extends Fragment {
 
     AllFootballViewModel allFootballViewModel;
-
 
     public SiguiendoFragment() {
         // Required empty public constructor
@@ -52,6 +50,22 @@ public class SiguiendoFragment extends Fragment {
         allFootballViewModel = ViewModelProviders.of(requireActivity()).get(AllFootballViewModel.class);
 
         RecyclerView recyclerViewEquipos = view.findViewById(R.id.equiposList);
+
+        SearchView searchView = view.findViewById(R.id.searchview_equipos);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                allFootballViewModel.establecerTerminoBusqueda(s);
+                return false;
+            }
+        });
+
         final SiguiendoFragment.EquiposAdapter equiposAdapter = new SiguiendoFragment.EquiposAdapter();
         recyclerViewEquipos.setAdapter(equiposAdapter);
 
@@ -61,6 +75,8 @@ public class SiguiendoFragment extends Fragment {
                 equiposAdapter.establecerListaNoticias(equipos);
             }
         });
+
+
 
     }
 
@@ -100,4 +116,26 @@ public class SiguiendoFragment extends Fragment {
             }
         }
     }
+
+//    @Override
+//    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+//        inflater.inflate(R.menu.menu_search, menu);
+//        MenuItem menuItem = menu.findItem(R.id.menu_buscador);
+//        SearchView searchView = (SearchView) menuItem.getActionView();
+//        searchView.setQueryHint("Buscador");
+//
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                return false;
+//            }
+//        });
+//
+//        super.onCreateOptionsMenu(menu, inflater);
+//    }
 }

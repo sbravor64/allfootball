@@ -23,6 +23,7 @@ public class AllFootballViewModel extends AndroidViewModel {
 //    public MutableLiveData<List<Noticia>> noticiasList = new MutableLiveData<>();
     public MutableLiveData<List<Partido>> listaPartidos = new MutableLiveData<>();
     public MutableLiveData<Partido> partidoSeleccionado = new MutableLiveData<>();
+    MutableLiveData<String> terminoBusqueda = new MutableLiveData<>();
 
     public enum ResultadoDelRegistro {
         CORRECTO,
@@ -108,6 +109,10 @@ public class AllFootballViewModel extends AndroidViewModel {
 
     public void establecerPartidoSeleccionado(Partido partido){
         partidoSeleccionado.setValue(partido);
+    }
+
+    public void establecerTerminoBusqueda(String termino){
+        terminoBusqueda.setValue(termino);
     }
 
 }
