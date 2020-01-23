@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".view.SiguiendoFragment">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
@@ -81,13 +77,29 @@
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/equiposList"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textViewEquipos"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:spanCount="2" />
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:text="Tus equipos" />
+
+            <ListView
+                android:id="@+id/listViewEquipos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+            </ListView>
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/equiposList"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/white"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                app:spanCount="2" />-->
 
             <TextView
                 android:id="@+id/textViewCompeticiones"
@@ -97,14 +109,13 @@
                 android:layout_weight="1"
                 android:text="Tus competiciones" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/competicionesList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:spanCount="1" />
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/competicionesList"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/white"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                app:spanCount="1" />-->
 
         </LinearLayout>
-    </ScrollView>
 </RelativeLayout>

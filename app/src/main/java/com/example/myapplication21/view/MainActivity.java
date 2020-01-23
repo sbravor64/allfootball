@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
-
         appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.fragmentNotices , R.id.fragmentPartidos, R.id.fragmentSiguiendo, R.id.fragmentAjustes)
                 .build();

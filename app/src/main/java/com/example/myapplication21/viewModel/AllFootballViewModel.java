@@ -100,6 +100,10 @@ public class AllFootballViewModel extends AndroidViewModel {
         return appDao.cargarEquipo();
     }
 
+    public List<Equipo> listEquipos(){
+        return appDao.listaEquipo();
+    }
+
     public void rellenarListaElementos(){
         List<Partido> partidos = new ArrayList<>();
         for (int i = 0; i < 5; i++) {

@@ -36,6 +36,9 @@ public abstract class AppDao {
     @Query("SELECT * FROM Equipo")
     public abstract LiveData<List<Equipo>> cargarEquipo();
 
+    @Query("SELECT * FROM Equipo")
+    public abstract List<Equipo> listaEquipo();
+
     @Insert
     public abstract void insertarEquipo(Equipo equipo);
 
