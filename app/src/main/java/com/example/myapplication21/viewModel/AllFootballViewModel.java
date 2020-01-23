@@ -4,9 +4,11 @@ import android.app.Application;
 import android.os.AsyncTask;
 
 import androidx.annotation.NonNull;
+import androidx.arch.core.util.Function;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Transformations;
 
 import com.example.myapplication21.db.AppDao;
 import com.example.myapplication21.db.AppDatabase;
@@ -23,7 +25,7 @@ public class AllFootballViewModel extends AndroidViewModel {
 //    public MutableLiveData<List<Noticia>> noticiasList = new MutableLiveData<>();
     public MutableLiveData<List<Partido>> listaPartidos = new MutableLiveData<>();
     public MutableLiveData<Partido> partidoSeleccionado = new MutableLiveData<>();
-    MutableLiveData<String> terminoBusqueda = new MutableLiveData<>();
+    public MutableLiveData<String> terminoBusqueda = new MutableLiveData<>();
 
     public enum ResultadoDelRegistro {
         CORRECTO,

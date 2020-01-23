@@ -15,7 +15,7 @@
     <item
         android:id="@+id/fragmentSiguiendo"
         android:icon="@drawable/ic_siguiendo"
-        android:title="@string/siguiendo" />
+        android:title="Siguiendo" />
 
     <item
         android:id="@+id/fragmentAjustes"
