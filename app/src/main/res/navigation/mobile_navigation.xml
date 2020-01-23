@@ -54,4 +54,9 @@
         android:name="com.example.myapplication21.view.ajustesPerfilFragment"
         android:label="Cuenta"
         tools:layout="@layout/fragment_ajustes_perfil" />
+    <fragment
+        android:id="@+id/fragmentPost"
+        android:name="com.example.myapplication21.fragmentPost"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" />
 </navigation>

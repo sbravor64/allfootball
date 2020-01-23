@@ -77,29 +77,12 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textViewEquipos"
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/equiposList"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:text="Tus equipos" />
-
-            <ListView
-                android:id="@+id/listViewEquipos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-
-            </ListView>
-
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/equiposList"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@android:color/white"-->
-<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--                app:spanCount="2" />-->
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:spanCount="1" />
 
             <TextView
                 android:id="@+id/textViewCompeticiones"
