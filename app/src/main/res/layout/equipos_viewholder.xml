@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/imageViewEquipo"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginRight="10dp"
         app:srcCompat="@drawable/googleg_standard_color_18" />
 
@@ -16,7 +16,7 @@
         android:id="@+id/textViewNombreEquipo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:layout_gravity="center"
         android:text="Equipo" />
 </LinearLayout>

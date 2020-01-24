@@ -1,105 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.RegistrarFragment">
 
-    <ScrollView
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo"
+        tools:layout_editor_absoluteX="-38dp"
+        tools:layout_editor_absoluteY="45dp" />
+
+    <TextView
+        android:id="@+id/textView_registro_credenciales"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="Regístrate con credenciales"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/fondo" />
+    <EditText
+        android:id="@+id/editText_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/marco_horizontal"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_registro_credenciales" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="30sp"
-            android:padding="20sp"
-            android:background="@drawable/marco_fondo"
-            android:orientation="vertical">
+    <EditText
+        android:id="@+id/editText_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/marco_horizontal"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_email" />
 
-            <TextView
-                android:id="@+id/textView_registro_face_google"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginBottom="30sp"
-                android:text="Regístrate con" />
+    <EditText
+        android:id="@+id/editText_biografia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/marco_horizontal"
+        android:gravity="top"
+        android:hint="Bíografia"
+        android:lines="4"
+        android:padding="25sp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_password" />
 
-            <TextView
-                android:id="@+id/textView_registro_credenciales"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginBottom="30sp"
-                android:text="O regístrate con credenciales" />
+    <EditText
+        android:id="@+id/editText_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/marco_horizontal"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_username" />
 
-            <EditText
-                android:id="@+id/editText_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/marco_horizontal"
-                android:ems="10"
-                android:hint="Usuario"
-                android:inputType="textPersonName"
-                android:paddingLeft="25sp"
-                android:paddingRight="25sp"
-                android:textSize="14sp" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="O regístrate con"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/button_registrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText_username"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-            <EditText
-                android:id="@+id/editText_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/marco_horizontal"
-                android:ems="10"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:paddingLeft="25sp"
-                android:paddingRight="25sp"
-                android:textSize="14sp" />
+    <Button
+        android:id="@+id/button_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/marco_button_blue"
+        android:paddingHorizontal="35sp"
+        android:text="CREAR CUENTA"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText_biografia" />
 
-            <EditText
-                android:id="@+id/editText_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/marco_horizontal"
-                android:ems="10"
-                android:hint="Contraseña"
-                android:inputType="textPassword"
-                android:paddingLeft="25sp"
-                android:paddingRight="25sp"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/editText_biografia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/marco_horizontal"
-                android:gravity="top"
-                android:hint="Bíografia"
-                android:lines="4"
-                android:padding="25sp"
-                android:textSize="14sp" />
-
-            <Button
-                android:id="@+id/button_registrar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30sp"
-                android:paddingHorizontal="35sp"
-                android:background="@drawable/marco_button_blue"
-                android:layout_gravity="center"
-                android:textColor="@android:color/white"
-                android:text="CREAR CUENTA" />
-        </LinearLayout>
-
-    </ScrollView>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

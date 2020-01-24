@@ -4,35 +4,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragmentPost">
+    tools:context=".view.PostFragment">
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:scaleType="centerCrop"
         android:layout_height="300dp"
-        app:srcCompat="@drawable/messi" />
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/messi"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/marco_notices"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:paddingHorizontal="10dp"
-        android:text="titulo"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="20sp"
+        android:text="MESSI SE VA DEL BARÇA"
+        android:textStyle="bold"
         android:textColor="@android:color/black"
-        android:textSize="25sp"
+        android:textSize="30sp"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/textViewPost"
+        android:id="@+id/textViewDescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:paddingHorizontal="10dp"
+        android:paddingHorizontal="25dp"
         android:text="Lorem ipsum"
-        android:textSize="20dp"
+        android:textSize="23sp"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
         tools:layout_editor_absoluteX="0dp" />
 

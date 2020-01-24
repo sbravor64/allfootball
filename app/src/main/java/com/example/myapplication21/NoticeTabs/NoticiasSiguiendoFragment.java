@@ -29,7 +29,6 @@ public class NoticiasSiguiendoFragment extends Fragment {
 
     AllFootballViewModel allFootballViewModel;
 
-
     public NoticiasSiguiendoFragment() {
         // Required empty public constructor
     }
@@ -62,12 +61,13 @@ public class NoticiasSiguiendoFragment extends Fragment {
     }
 
     public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.NoticiasViewHolder> {
+        private OnNoticeListener onNoticeListener;
         List<Noticia> noticiasList;
 
         @NonNull
         @Override
         public NoticiasViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new NoticiasViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.noticias_siguiendo_viewholder, parent, false));
+            return new NoticiasViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.noticias_siguiendo_viewholder, parent, false), onNoticeListener);
         }
 
         @Override
@@ -89,17 +89,30 @@ public class NoticiasSiguiendoFragment extends Fragment {
             notifyDataSetChanged();
         }
 
-        public class NoticiasViewHolder extends RecyclerView.ViewHolder {
+        public class NoticiasViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
             TextView nomCategory, title, description;
+            OnNoticeListener onNoticeListener;
 
-            public NoticiasViewHolder(@NonNull View itemView) {
+            public NoticiasViewHolder(@NonNull View itemView, OnNoticeListener onNoticeListener) {
                 super(itemView);
                 nomCategory = itemView.findViewById(R.id.textViewCategory);
                 title = itemView.findViewById(R.id.textViewTitle);
 //                description = itemView.findViewById(R.id.textViewDescription);
+                this.onNoticeListener = onNoticeListener;
+
+                itemView.setOnClickListener(this);
+            }
+
+            @Override
+            public void onClick(View v) {
+                onNoticeListener.onNoticeClick(getAdapterPosition());
             }
         }
+    }
+
+    public interface OnNoticeListener {
+        void onNoticeClick(int position);
     }
 
 }
