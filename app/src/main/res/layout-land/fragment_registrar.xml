@@ -13,15 +13,15 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/fondo"
-        tools:layout_editor_absoluteX="-38dp"
-        tools:layout_editor_absoluteY="45dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-186dp" />
 
     <TextView
         android:id="@+id/textView_registro_credenciales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:gravity="center"
         android:text="Regístrate con credenciales"
         android:textColor="@android:color/white"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/marco_horizontal"
         android:ems="10"
         android:hint="Usuario"
@@ -69,7 +69,7 @@
         android:gravity="top"
         android:hint="Bíografia"
         android:lines="4"
-        android:padding="25sp"
+        android:padding="11sp"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_password" />
@@ -94,7 +94,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="32dp"
         android:text="O regístrate con"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/button_registrar"
@@ -108,13 +108,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="32dp"
         android:background="@drawable/marco_button_blue"
         android:paddingHorizontal="35sp"
         android:text="CREAR CUENTA"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText_biografia" />
+        app:layout_constraintEnd_toEndOf="@+id/editText_biografia"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="@+id/editText_biografia"
+        app:layout_constraintTop_toBottomOf="@+id/editText_biografia" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

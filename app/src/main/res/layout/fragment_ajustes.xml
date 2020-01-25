@@ -13,18 +13,18 @@
         android:paddingTop="20sp"
         android:orientation="vertical">
 
-
         <LinearLayout
             android:id="@+id/perfilLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="25dp"
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:id="@+id/imageViewCuenta"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:padding="10dp"
                 android:background="#26174D"
                 android:src="@drawable/account" />
@@ -48,6 +48,84 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Privacidad, seguridad, registro" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/informacionLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageViewInformacion"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:background="#26174D"
+                android:src="@drawable/info" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewInformacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:text="Información"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewDescInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sobre nosotros, RRSS, valoración" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ayudaLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageViewAyuda"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:background="#26174D"
+                android:src="@drawable/question_sign" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewAyuda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:text="Ayuda y sugerencias"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewDescAyuda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FAQ, contáctenos, política de privacidad" />
             </LinearLayout>
 
         </LinearLayout>

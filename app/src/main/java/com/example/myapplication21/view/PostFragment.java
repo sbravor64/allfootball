@@ -1,32 +1,37 @@
 package com.example.myapplication21.view;
 
 
-import android.content.Intent;
+import android.app.ActionBar;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication21.NoticeTabs.NoticiasSiguiendoFragment;
 import com.example.myapplication21.R;
+import com.example.myapplication21.viewModel.AllFootballViewModel;
+import com.github.chrisbanes.photoview.PhotoViewAttacher;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PostFragment extends Fragment implements NoticiasSiguiendoFragment.OnNoticeListener {
+public class PostFragment extends Fragment {
 
     TextView textViewTitulo, textViewDescripcion;
+    ImageView imageView;
 
     public PostFragment() {
-        // Required empty public constructor
     }
 
 
@@ -35,6 +40,7 @@ public class PostFragment extends Fragment implements NoticiasSiguiendoFragment.
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_post, container, false);
+
     }
 
     @Override
@@ -44,9 +50,18 @@ public class PostFragment extends Fragment implements NoticiasSiguiendoFragment.
         textViewTitulo = view.findViewById(R.id.textViewTitle);
         textViewDescripcion = view.findViewById(R.id.textViewDescripcion);
 
+        imageView = view.findViewById(R.id.imageView2);
+
+        Bundle bundle = getArguments();
+
+        String titulo = bundle.getString("bTitulo");
+        String descripcion = bundle.getString("bDescripcion");
+
+        textViewTitulo.setText(titulo);
+        textViewDescripcion.setText(descripcion);
+
+        ((MainActivity) getActivity()).setActionBarTitle(titulo);
+
     }
 
-    @Override
-    public void onNoticeClick(int position) {
-    }
 }

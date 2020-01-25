@@ -1,13 +1,18 @@
 package com.example.myapplication21.NoticeTabs;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -17,6 +22,7 @@ import android.widget.TextView;
 
 import com.example.myapplication21.R;
 import com.example.myapplication21.model.Noticia;
+import com.example.myapplication21.view.PostFragment;
 import com.example.myapplication21.viewModel.AllFootballViewModel;
 
 import java.util.List;
@@ -28,6 +34,7 @@ import java.util.List;
 public class NoticiasSiguiendoFragment extends Fragment {
 
     AllFootballViewModel allFootballViewModel;
+    NavController navController;
 
     public NoticiasSiguiendoFragment() {
         // Required empty public constructor
@@ -45,6 +52,8 @@ public class NoticiasSiguiendoFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        navController = Navigation.findNavController(view);
+
         allFootballViewModel = ViewModelProviders.of(requireActivity()).get(AllFootballViewModel.class);
 
         RecyclerView recyclerView = view.findViewById(R.id.noticiaslist);
@@ -57,17 +66,15 @@ public class NoticiasSiguiendoFragment extends Fragment {
                 noticiasAdapter.establecerListaNoticias(noticias);
             }
         });
-
     }
 
     public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.NoticiasViewHolder> {
-        private OnNoticeListener onNoticeListener;
         List<Noticia> noticiasList;
 
         @NonNull
         @Override
         public NoticiasViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new NoticiasViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.noticias_siguiendo_viewholder, parent, false), onNoticeListener);
+            return new NoticiasViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.noticias_siguiendo_viewholder, parent, false));
         }
 
         @Override
@@ -77,6 +84,20 @@ public class NoticiasSiguiendoFragment extends Fragment {
             holder.nomCategory.setText(noticias.getNomCategoria());
             holder.title.setText(noticias.getTitle());
 //            holder.description.setText(noticias.getDescription());
+
+            holder.setOnNoticeListener(new NoticeListener() {
+                @Override
+                public void onNoticeClick(View v, int position) {
+                    String titulo = noticiasList.get(position).getTitle();
+                    String descripcion = noticiasList.get(position).getDescription();
+
+                    Bundle args = new Bundle();
+                    args.putString("bTitulo", titulo);
+                    args.putString("bDescripcion", descripcion);
+                    Navigation.findNavController(v).navigate(R.id.fragmentPost, args);
+
+                }
+            });
         }
 
         @Override
@@ -92,27 +113,31 @@ public class NoticiasSiguiendoFragment extends Fragment {
         public class NoticiasViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
             TextView nomCategory, title, description;
-            OnNoticeListener onNoticeListener;
+            NoticeListener onNoticeListener;
 
-            public NoticiasViewHolder(@NonNull View itemView, OnNoticeListener onNoticeListener) {
+            public NoticiasViewHolder(@NonNull View itemView) {
                 super(itemView);
                 nomCategory = itemView.findViewById(R.id.textViewCategory);
                 title = itemView.findViewById(R.id.textViewTitle);
 //                description = itemView.findViewById(R.id.textViewDescription);
-                this.onNoticeListener = onNoticeListener;
 
                 itemView.setOnClickListener(this);
             }
 
             @Override
             public void onClick(View v) {
-                onNoticeListener.onNoticeClick(getAdapterPosition());
+                onNoticeListener.onNoticeClick(v, getAdapterPosition());
+            }
+
+            public void setOnNoticeListener(NoticeListener onNoticeListener) {
+                this.onNoticeListener = onNoticeListener;
             }
         }
+
     }
 
-    public interface OnNoticeListener {
-        void onNoticeClick(int position);
+    public interface NoticeListener {
+        void onNoticeClick(View v, int position);
     }
 
 }

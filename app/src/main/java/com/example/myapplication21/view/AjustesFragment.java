@@ -53,9 +53,12 @@ public class AjustesFragment extends Fragment {
             }
         });
 
-////        usernameTextView = view.findViewById(R.id.textViewUsername);
-//
-//        username = allFootballViewModel.usuario;
-//        usernameTextView.setText(username);
+        view.findViewById(R.id.ayudaLinearLayout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.ajustesAyudaFragment);
+            }
+        });
+
     }
 }

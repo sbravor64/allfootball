@@ -59,4 +59,9 @@
         android:name="com.example.myapplication21.view.PostFragment"
         android:label="fragment_post"
         tools:layout="@layout/fragment_post" />
+    <fragment
+        android:id="@+id/ajustesAyudaFragment"
+        android:name="com.example.myapplication21.view.ajustesAyudaFragment"
+        android:label="Ayuda"
+        tools:layout="@layout/fragment_ajustes_ayuda" />
 </navigation>

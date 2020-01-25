@@ -1,4 +1,5 @@
 package com.example.myapplication21.view;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication21.R;
@@ -26,6 +29,7 @@ import java.util.List;
 public class SiguiendoFragment extends Fragment {
 
     AllFootballViewModel allFootballViewModel;
+    ImageView imageView;
 
     public SiguiendoFragment() {
         // Required empty public constructor
@@ -40,11 +44,11 @@ public class SiguiendoFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         allFootballViewModel = ViewModelProviders.of(requireActivity()).get(AllFootballViewModel.class);
-
+        imageView = view.findViewById(R.id.imageViewClubFavorito);
 
         RecyclerView recyclerViewEquipos = view.findViewById(R.id.equiposList);
 
@@ -54,10 +58,9 @@ public class SiguiendoFragment extends Fragment {
         allFootballViewModel.cargarEquipos().observe(getViewLifecycleOwner(), new Observer<List<Equipo>>() {
             @Override
             public void onChanged(List<Equipo> equipos) {
-                equiposAdapter.establecerListaNoticias(equipos);
+                equiposAdapter.establecerListaEquipos(equipos);
             }
         });
-
 
     }
 
@@ -71,10 +74,30 @@ public class SiguiendoFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull SiguiendoFragment.EquiposAdapter.EquiposViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull final SiguiendoFragment.EquiposAdapter.EquiposViewHolder holder, int position) {
+            final Equipo equipo = equiposList.get(position);
 
-            Equipo equipos = equiposList.get(position);
-            holder.nom.setText(equipos.getNom());
+            holder.nom.setText(equipo.getNom());
+
+            if(equipo.getFav()==0){
+                holder.imageView.setImageResource(R.drawable.ic_favorite_border_black_24dp);
+            } else if(equipo.getFav()==1){
+                holder.imageView.setImageResource(R.drawable.ic_favorite_black_24dp);
+            }
+
+            holder.imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(equipo.getFav()==0){
+                        equipo.setFav(1);
+                        holder.imageView.setImageResource(R.drawable.ic_favorite_black_24dp);
+                    } else if(equipo.getFav()==1){
+                        equipo.setFav(0);
+                        holder.imageView.setImageResource(R.drawable.ic_favorite_border_black_24dp);
+
+                    }
+                }
+            });
         }
 
         @Override
@@ -82,18 +105,19 @@ public class SiguiendoFragment extends Fragment {
             return equiposList == null ? 0 : equiposList.size();
         }
 
-        void establecerListaNoticias(List<Equipo> n){
+        void establecerListaEquipos(List<Equipo> n){
             equiposList = n;
             notifyDataSetChanged();
         }
 
         public class EquiposViewHolder extends RecyclerView.ViewHolder {
-
             TextView nom;
+            ImageView imageView;
 
             public EquiposViewHolder(@NonNull View itemView) {
                 super(itemView);
                 nom = itemView.findViewById(R.id.textViewNombreEquipo);
+                imageView = itemView.findViewById(R.id.imageViewClubFavorito);
             }
         }
     }

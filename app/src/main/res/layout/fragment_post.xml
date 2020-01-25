@@ -1,53 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.PostFragment">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/messi"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <ImageView
-        android:id="@+id/imageView4"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:src="@drawable/marco_notices"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:fitsSystemWindows="true"
+        android:background="@android:color/white"
+        android:id="@+id/appBarLayout">
 
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:paddingHorizontal="20sp"
-        android:text="MESSI SE VA DEL BARÇA"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:layout_editor_absoluteX="0dp" />
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|snap|enterAlwaysCollapsed">
 
-    <TextView
-        android:id="@+id/textViewDescripcion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:paddingHorizontal="25dp"
-        android:text="Lorem ipsum"
-        android:textSize="23sp"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
-        tools:layout_editor_absoluteX="0dp" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="400dp"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/messi"
+                app:layout_collapseMode="parallax"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                android:background="@android:color/transparent"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:paddingHorizontal="20sp"
+            android:text="MESSI SE VA DEL BARÇA"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingHorizontal="25dp"
+            android:text="Lorem ipsum"
+            android:textSize="20sp" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

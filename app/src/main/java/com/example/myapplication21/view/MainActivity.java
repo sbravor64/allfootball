@@ -3,20 +3,14 @@ package com.example.myapplication21.view;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.example.myapplication21.R;
-import com.example.myapplication21.viewModel.AllFootballViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
@@ -54,7 +48,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.fragmentSiguiendo:
                     case R.id.fragmentAjustes:
                     case R.id.ajustesPerfilFragment:
+                    case R.id.ajustesAyudaFragment:
                         navView.setVisibility(View.VISIBLE);
+                        getSupportActionBar().show();
+                        break;
+                    case R.id.fragmentPost:
+                        navView.setVisibility(View.GONE);
                         getSupportActionBar().show();
                         break;
                     default:
@@ -66,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -76,8 +74,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
         return true;
     }
+
+    public void setActionBarTitle(String title){
+        getSupportActionBar().setTitle(title);
+    }
+
+//    @Override
+//    public boolean onPrepareOptionsMenu(Menu menu) {
+//        menu.findItem(R.id.menu_buscador).setVisible(false);
+//        super.onPrepareOptionsMenu(menu);
+//        return false;
+//    }
 }

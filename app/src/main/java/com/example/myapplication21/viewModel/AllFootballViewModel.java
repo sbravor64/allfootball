@@ -72,6 +72,10 @@ public class AllFootballViewModel extends AndroidViewModel {
         });
     }
 
+    public void updateFav(int fav){
+        appDao.updateFavoritos(fav);
+    }
+
     public void iniciarSesion(final String nombre, final String contrasenya) {
         AsyncTask.execute(new Runnable() {
             @Override
@@ -94,6 +98,10 @@ public class AllFootballViewModel extends AndroidViewModel {
 
     public LiveData<List<Noticia>> cargarNoticas(){
      return appDao.cargarNoticias();
+    }
+
+    public LiveData<List<Equipo>> cargarEquiposFav(){
+        return appDao.cargarFavoritos();
     }
 
     public LiveData<List<Equipo>> cargarEquipos(){

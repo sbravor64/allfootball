@@ -11,13 +11,16 @@ public class Equipo {
 
     private String nom;
     private String alias;
-    private String nación;
+    private String nacion;
 
-    public Equipo(int idEquipo, String nom, String alias, String nación) {
+    private int fav;
+
+    public Equipo(int idEquipo, String nom, String alias, String nacion, int fav) {
         this.idEquipo = idEquipo;
         this.nom = nom;
         this.alias = alias;
-        this.nación = nación;
+        this.nacion = nacion;
+        this.fav = fav;
     }
 
     public String getNom() {
@@ -36,11 +39,27 @@ public class Equipo {
         this.alias = alias;
     }
 
-    public String getNación() {
-        return nación;
+    public String getNacion() {
+        return nacion;
     }
 
-    public void setNación(String nación) {
-        this.nación = nación;
+    public void setNacion(String nacion) {
+        this.nacion = nacion;
+    }
+
+    public int getIdEquipo() {
+        return idEquipo;
+    }
+
+    public void setIdEquipo(int idEquipo) {
+        this.idEquipo = idEquipo;
+    }
+
+    public int getFav() {
+        return fav;
+    }
+
+    public void setFav(int fav) {
+        this.fav = fav;
     }
 }

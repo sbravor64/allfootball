@@ -7,10 +7,13 @@
     tools:context=".view.AccederFragment">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:background="@drawable/fondo"/>
+        android:src="@drawable/fondo"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-186dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

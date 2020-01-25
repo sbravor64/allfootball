@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.myapplication21.model.Equipo;
 import com.example.myapplication21.model.Noticia;
@@ -42,5 +43,10 @@ public abstract class AppDao {
     @Insert
     public abstract void insertarEquipo(Equipo equipo);
 
+    @Query("UPDATE Equipo SET fav = :fav")
+    public abstract void updateFavoritos(int fav);
+
+    @Query("SELECT * FROM Equipo WHERE fav=1")
+    public abstract LiveData<List<Equipo>> cargarFavoritos();
 
 }
