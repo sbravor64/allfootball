@@ -5,10 +5,107 @@
     android:layout_height="match_parent"
     tools:context=".view.ajustesAyudaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/preguntasFrecuentesLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="15dp">
+
+            <ImageView
+                android:id="@+id/imageViewPreguntas"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_live_help_black_24dp" />
+
+            <TextView
+                android:id="@+id/textViewPreguntasTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="Preguntas frecuentes"
+                android:textColor="@android:color/black"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ContactoLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="15dp">
+
+            <ImageView
+                android:id="@+id/imageViewContacto"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_supervisor_account_black_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewContactoTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="Contáctanos"
+                    android:textColor="@android:color/black"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/textViewContactoDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:text="¿Preguntas? ¿Necesitas ayuda?" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/privacidadLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="15dp">
+
+            <ImageView
+                android:id="@+id/imageViewPrivacidad"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_insert_drive_file_black_24dp" />
+
+            <TextView
+                android:id="@+id/textViewPrivacidadTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="Condiciones y Privacidad"
+                android:textColor="@android:color/black"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </FrameLayout>
