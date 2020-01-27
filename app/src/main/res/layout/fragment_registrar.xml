@@ -73,16 +73,6 @@
             android:paddingRight="25sp"
             android:textSize="14sp" />
 
-        <EditText
-            android:id="@+id/editText_biografia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/marco_horizontal"
-            android:gravity="top"
-            android:hint="Bíografia"
-            android:lines="4"
-            android:padding="25sp"
-            android:textSize="14sp" />
 
         <Button
             android:id="@+id/button_registrar"

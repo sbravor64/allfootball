@@ -18,7 +18,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingHorizontal="250dp">
+        android:paddingHorizontal="200dp"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="76dp">
 
         <EditText
             android:id="@+id/editText_username"
@@ -59,7 +61,6 @@
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:background="@drawable/marco_button_blue"
-            android:paddingHorizontal="60sp"
             android:text="Iniciar sesión"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toTopOf="@+id/button_crear_cuenta"

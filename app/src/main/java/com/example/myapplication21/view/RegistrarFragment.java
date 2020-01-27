@@ -11,14 +11,22 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.myapplication21.R;
 import com.example.myapplication21.viewModel.AllFootballViewModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 /**
@@ -26,9 +34,12 @@ import com.example.myapplication21.viewModel.AllFootballViewModel;
  */
 public class RegistrarFragment extends Fragment {
 
+    private FirebaseAuth mAuth;
+
     NavController navController;
     AllFootballViewModel allFootballViewModel;
-    EditText emailEditText, passwordEditText, biografiaEditText, usernameEditText;
+    EditText emailEditText, passwordEditText, usernameEditText;
+    Button buttonRegistrar;
 
 
     public RegistrarFragment() {
@@ -47,52 +58,71 @@ public class RegistrarFragment extends Fragment {
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        mAuth = FirebaseAuth.getInstance();
+
         navController = Navigation.findNavController(view);
         allFootballViewModel = ViewModelProviders.of(requireActivity()).get(AllFootballViewModel.class);
 
         usernameEditText = view.findViewById(R.id.editText_username);
         emailEditText = view.findViewById(R.id.editText_email);
         passwordEditText = view.findViewById(R.id.editText_password);
-        biografiaEditText = view.findViewById(R.id.editText_biografia);
+        buttonRegistrar = view.findViewById(R.id.button_registrar);
 
-
-        view.findViewById(R.id.button_registrar).setOnClickListener(new View.OnClickListener() {
+        buttonRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                String username = usernameEditText.getText().toString();
-                String email = emailEditText.getText().toString();
-                String password = passwordEditText.getText().toString();
-                String biografia = biografiaEditText.getText().toString();
-
-                allFootballViewModel.registrarUsuario(username, email, password, biografia);
-            }
-        });
-
-        allFootballViewModel.resultadoDelRegistro.observe(getViewLifecycleOwner(), new Observer<AllFootballViewModel.ResultadoDelRegistro>() {
-            @Override
-            public void onChanged(AllFootballViewModel.ResultadoDelRegistro resultadoDelRegistro) {
-
-                switch (resultadoDelRegistro) {
-                    case CORRECTO:
-                        allFootballViewModel.resultadoDelRegistro.setValue(AllFootballViewModel.ResultadoDelRegistro.INICIADO);
-                        break;
-                    case USUARIO_NO_DISPONBLE:
-                        Toast.makeText(getContext(), "USUARIO O GMAIL NO DISPONIBLE", Toast.LENGTH_SHORT).show();
-                        break;
-                }
-            }
-        });
-
-        allFootballViewModel.estadoDeLaAutenticacion.observe(getViewLifecycleOwner(), new Observer<AllFootballViewModel.EstadoDeLaAutenticacion>() {
-
-            @Override
-            public void onChanged(AllFootballViewModel.EstadoDeLaAutenticacion estadoDeLaAutenticacion) {
-                switch (estadoDeLaAutenticacion) {
-                    case AUTENTICADO:
-                        navController.navigate(R.id.fragmentNotices);
-                        break;
-                }
+            public void onClick(View view) {
+                crearCuenta();
             }
         });
     }
+
+    private void crearCuenta() {
+        if (!validarFormulario()) {
+            return;
+        }
+
+        buttonRegistrar.setEnabled(false);
+
+        mAuth.createUserWithEmailAndPassword(emailEditText.getText().toString(), passwordEditText.getText().toString())
+                .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            actualizarUI(mAuth.getCurrentUser());
+                        } else {
+                            Snackbar.make(requireView(), "Error: " + task.getException(), Snackbar.LENGTH_LONG).show();
+
+                        }
+                        buttonRegistrar.setEnabled(true);
+                    }
+                });
+
+    }
+
+    private void actualizarUI(FirebaseUser currentUser) {
+        if(currentUser != null){
+            navController.navigate(R.id.fragmentNotices);
+        }
+    }
+
+    private boolean validarFormulario() {
+        boolean valid = true;
+
+        if (TextUtils.isEmpty(emailEditText.getText().toString())) {
+            emailEditText.setError("Required.");
+            valid = false;
+        } else {
+            emailEditText.setError(null);
+        }
+
+        if (TextUtils.isEmpty(passwordEditText.getText().toString())) {
+            passwordEditText.setError("Required.");
+            valid = false;
+        } else {
+            passwordEditText.setError(null);
+        }
+
+        return valid;
+    }
+
 }
