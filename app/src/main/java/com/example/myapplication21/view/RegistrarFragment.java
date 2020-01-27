@@ -38,7 +38,7 @@ public class RegistrarFragment extends Fragment {
 
     NavController navController;
     AllFootballViewModel allFootballViewModel;
-    EditText emailEditText, passwordEditText, usernameEditText;
+    EditText emailEditText, passwordEditText;
     Button buttonRegistrar;
 
 
@@ -61,9 +61,8 @@ public class RegistrarFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
 
         navController = Navigation.findNavController(view);
-        allFootballViewModel = ViewModelProviders.of(requireActivity()).get(AllFootballViewModel.class);
+//        allFootballViewModel = ViewModelProviders.of(requireActivity()).get(AllFootballViewModel.class);
 
-        usernameEditText = view.findViewById(R.id.editText_username);
         emailEditText = view.findViewById(R.id.editText_email);
         passwordEditText = view.findViewById(R.id.editText_password);
         buttonRegistrar = view.findViewById(R.id.button_registrar);
@@ -96,7 +95,6 @@ public class RegistrarFragment extends Fragment {
                         buttonRegistrar.setEnabled(true);
                     }
                 });
-
     }
 
     private void actualizarUI(FirebaseUser currentUser) {
